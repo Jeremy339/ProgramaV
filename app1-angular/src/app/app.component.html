@@ -1,0 +1,29 @@
+<h1>Xd</h1>
+<h1>{{titulo}}</h1>
+<p>{{productos | json}}</p>
+<table border="1">
+    <thead>
+      <tr>
+        <th>NOMBRE</th>
+        <th>PRECIO</th>
+        <th>STOCK</th>
+        <th>IMAGEN</th>
+        <th>ACCION</th>
+      </tr>
+    </thead>
+   <tbody>
+    <tr *ngFor="let prod of productos">
+      <td>{{prod.nombre}}</td>
+      <td>{{prod.precio}}</td>
+      <td>{{prod.stock}}</td>
+      <td>
+        <img src="{{prod.imagen}}" alt="" width="100px">
+      </td>
+      <td>
+        <button>X</button>
+      </td>
+    </tr>
+    
+   </tbody>
+  
+  </table>
