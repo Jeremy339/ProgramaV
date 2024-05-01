@@ -1,0 +1,27 @@
+####Listar Producto
+GET http://127.0.0.1:3000/producto
+
+###Guardar Producto
+POST http://127.0.0.1:3000/producto
+Content-Type: application/json
+
+{
+    "nombre": "Mouse",
+    "precio": 50
+}
+
+###Mostrar Producto
+GET http://127.0.0.1:3000/producto/80
+
+
+###Modificar Producto
+PUT http://127.0.0.1:3000/producto/20
+Content-Type: application/json
+
+{
+    "nombre": "Mouse",
+    "precio": 50
+}
+
+###Eliminar Producito por ID
+DELETE http://127.0.0.1:3000/producto/20
