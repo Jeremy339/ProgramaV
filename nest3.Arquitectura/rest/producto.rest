@@ -6,9 +6,9 @@ POST http://127.0.0.1:3000/producto
 Content-Type: application/json
 
 {
-    "nombre": "Computadora",
-    "precio": 50, 
-    "cantidad": 10
+    "nombre": "Procesador",
+    "precio": 20, 
+    "cantidad": 1
 }
 
 ###Mostrar Producto
