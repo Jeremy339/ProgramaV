@@ -1,14 +1,22 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Producto } from './entities/producto.entity';
+import { ProxyOptions, Repository } from 'typeorm';
 
 @Injectable()
 export class ProductoService {
     private productos: any[]=[];
-    findAll():any[]{
-        return this.productos
+    constructor (@InjectRepository(Producto)private readonly productoRepository: Repository<Producto>){}
+    async findAll(): Promise<any[]> {
+        return this.productoRepository.find();
     }
-create(prod:any){
-    this.productos.push(prod)
-    return prod
+    async create(prod:any){
+    //this.productos.push(prod)
+    const producto = new Producto()
+    producto.nombre = prod.nombre;
+    producto.precio = prod.precio;
+    producto.cantidad = prod.cantidad;
+    return await this.productoRepository.save(producto);
 }
 
 update(nombre:string,prod:any):any{
