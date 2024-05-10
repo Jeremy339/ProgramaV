@@ -6,8 +6,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
 app.useGlobalPipes(new ValidationPipe({
-  disableErrorMessages:true,
+  disableErrorMessages:false,
   whitelist: true,
+  forbidNonWhitelisted: true
 })) 
 
 //Class Validator (Instalando npm i --save class-validator class-transformer)
